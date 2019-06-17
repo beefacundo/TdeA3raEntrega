@@ -1,0 +1,35 @@
+{{>header}}
+<div class="container">
+    {{#if errorLogin }}
+		<div class="alert alert-danger" role="alert">
+			<h3>ERROR. No existe usuario con esos datos</h3>
+		</div>
+	{{/if}}
+	<div class="col-md-6 login-form-1 align-self-center">
+	    <h3>Login</h3>
+	    	<form action="/log" method="POST">
+		        <div class="form-group">
+		            <input name="email" type="text" class="form-control" placeholder="Your Email *" value="" required/>
+		        </div>
+		        <div class="form-group">
+		            <input type="password" class="form-control" placeholder="Your Password *" value="" required/>
+		        </div>
+		        <div class="form-group">
+		            <button class="btn btn-primary"type="submit">Login</button>
+		        </div>
+		        <div class="form-group">
+		            <a href="#" class="btnForgetPwd">Forget Password?</a>
+		        </div>
+		    </form>
+	</div>
+</div>
+<div>
+		<h3>Nota:</h3><br>
+		<p>Para probar esta seccion existene previamente 2 usarios:</p><br>
+		<p>beefacundo@yahoo.com</p><br>
+		<P>ESTUDIANTE</p><br>
+		<p>sebastiangomez@tdea.com.co</p><br>
+		<p>COORDINARDOR</p><br>
+		<p>Solo se controla que exista el email ingresado</p><br>
+	</div>
+{{>footer}}

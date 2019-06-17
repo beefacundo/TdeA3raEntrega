@@ -1,0 +1,18 @@
+{
+  "name": "modulo2",
+  "version": "1.0.0",
+  "description": "Modulo 2 Curso de NodeJs TdeA",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "beefacundo",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "handlebars": "^4.1.2",
+    "hbs": "^4.0.4",
+    "nodemon": "^1.19.0",
+    "popper": "^1.0.1"
+  }
+}

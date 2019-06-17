@@ -1,0 +1,59 @@
+<h2>Listado de Cursos</h2>
+{{#if admin}}
+<div>
+    <form onclick="location.href = '/crearCurso';">
+        <button class="btn btn-primary"type=button >Crear Curso</button>
+    </form>
+</div>  
+
+{{/if}}
+<table class="table">
+    <thead class="thead-light">
+        <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Descriptci&oacute;n</th>
+            {{#if admin}}
+                <th scope="col">Duraci&oacute;n</th>
+                <th scope="col">Modalidad</th>
+                <th scope="col">Cupos Disponibles</th>
+                <th scope="col">Estado</th>
+            {{else}}
+                <th scope="col">Valor</th>
+                <th scope="col"></th>
+            {{/if}}
+        </tr>
+    </thead>
+    <tbody>
+        {{#if admin }}
+            {{#each lista}}
+                <tr>
+                    <td scope="row">{{this.name}}</td>
+                    <td>{{this.description}}</td>
+                    <td>{{this.durationHs}} horas</td>
+                    {{#if this.remote}}
+                        <td>Remoto</td>
+                    {{else}}
+                        <td>Presencial</td>
+                    {{/if}}
+                    <td>{{this.free}}</td>
+                    {{#if this.status }}
+                        <td><input type="checkbox" checked data-toggle="toggle" /></td>
+                    {{else}}
+                        <td><input type="checkbox" data-toggle="toggle"/></td>
+                    {{/if}}
+                </tr>
+             {{/each}}
+        {{else}}
+            {{#each lista}}
+                {{#if this.status }}
+                    <tr class="clickable-row">
+                        <td class="col-md-2" scope="row">{{this.name}}</td>
+                        <td class="col-md-5 text"><span>{{this.description}}</span></td>
+                        <td class="col-md-1">${{this.cost}}</td>
+                        <td class="col-md-1"><button class="insc btn btn-primary"type="button" data-href='/inscripcion/{{this.id}}'>Incribirse</button></td>
+                    </tr>
+                {{/if}}
+            {{/each}}
+        {{/if}}
+    </tbody>
+</table>

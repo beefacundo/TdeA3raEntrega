@@ -1,0 +1,71 @@
+{{>header}}
+<div class="container">
+	<h2>Listado de Pre-Incriptos</h2>
+	<div>
+		<h3>Eliminar registro</h3>
+		{{#if regNotElim}}
+			<div class="alert alert-danger" role="alert">
+				<h3>ERROR. A ocurrido un error al intentar eliminar el registro.</h3>
+			</div>
+		{{/if }}
+		{{#if regElim }}
+			<div class="alert alert-success" role="alert">
+				<h3>EXITO. Se elimino correctamente el registo</h3>
+			</div>
+		{{/if}}
+		<form action="/deleteInp" method="POST">
+			<div class="row">
+				<div class="col-md-4">
+					<span class="col-md-12">Id Curso:</span>
+					<input name="idCurso" class="col-md-12" type="number" min="1000" max="9999" step="1" value="" required/>
+				</div>
+				<div class="col-md-4">
+					<span class="col-md-12"> Id Estudiante:</span>
+					<input name="idEst" class="col-md-12" type="number" min="1" max="9999" step="1"required/>
+				</div>
+				<div class="col-md-4">
+					<button class="btn btn-danger"type="submit">Eliminar</button>
+				</div>
+			</div>
+		</form>
+	</div>
+	<table class="table">
+	    <thead class="thead-light">
+	        <tr>
+	            <th scope="col">Id Curso</th>
+	            <th scope="col">Curso Nombre</th>
+	            <th scope="col">Id Est.</th>
+	            <th scope="col">Nombre Est.</th>
+	            <th scope="col">Tel&eacute;fono</th>
+	            <th scope="col">Eliminar Registro</th>
+	            <th scope="col">Cerrar Curso</th>
+	        </tr>
+	    </thead>
+	    <tbody>
+	        {{#each lista}}
+	            <tr>
+	                <td scope="row">{{this.idCurso}}</td>
+	                <td>{{this.nameCur}}</td>
+	                <td>{{this.idUser}}</td>
+	                <td>{{this.nameUsr}}</td>
+	                <td>{{this.phoneUsr}}</td>
+	                <td class="col-md-1">
+	                	<form action="/delete" method="POST">
+	                		<input name="idInsc" value="{{this.ind}}" hidden/>
+	                		<button class="btn btn-danger"type="submit">Eliminar (+)</button>
+	                	</form>
+	                </td>
+	                <td class="col-md-1">
+	                	{{#if this.stateCur}}
+		                	<form action="/close" method="POST">
+		                		<input name="idCurso" value="{{this.idCurso}}" hidden/>
+		                		<button class="btn btn-primary"type="submit">Cerrar Curso</button>
+		                	</form>
+		                {{/if}}
+	                </td>
+	            </tr>
+	         {{/each}}
+	    </tbody>
+	</table>
+</div>
+{{>footer}}

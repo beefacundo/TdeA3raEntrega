@@ -1,0 +1,76 @@
+{{>header}}
+{{#if error}}
+<div class="alert alert-danger" role="alert">
+ <h3>ERROR ya se encuentra inscripto al curso</h3>
+</div>
+{{/if}}
+<div class="container">
+	<h2>Incribirse al Curso:</h2>
+	<div>
+		<div class="row">
+			<div class="col-md-12">
+				<span class="col-md-12">Nombre: {{curso.nombre}}</span>
+				<span class="col-md-12">{{curso.name}}</span>
+			</div>
+			<div class="col-md-12"> 
+				<span class="col-md-12">Profesor:</span>
+				<span class="col-md-12">{{curso.teacher}}</span>
+			</div>
+		</div>
+		<div class="row">
+			<span class="col-md-12">Descripci&oacute;n:</span>
+			<span class="col-md-12">{{curso.description}}</span>
+		</div>
+		<div class="row">
+		</div>
+		<div class="row">
+			<div class="col-md-4">
+				<span class="col-md-12">Modalidad:</span>
+				{{#if curso.remote}}
+					<span class="col-md-12">Remoto</span>
+	            {{else}}
+	            	<span class="col-md-12">Presencial</span>
+	            {{/if}}
+			</div>
+			<div class="col-md-4">
+				<span class="col-md-12">Intensidad:</span>
+				<span class="col-md-12">{{curso.durationHs}}</span>
+			</div>
+			<div class="col-md-4">
+				<span class="col-md-12">Valor:</span>
+				<span class="col-md-12">$ {{curso.cost}}</span>
+			</div>
+		</div>
+	</div>
+	<h2>Datos Personales</h2>
+	<form action="/insc" method="POST">
+		<div class="row">
+			<div class="col-md-3">
+				<input name="idUser" value="{{user.id}}" hidden/>
+				<span class="col-md-12">DNI:</span>
+				<input name="dni" class="col-md-12" type="number" min="100000" max="999999" value="{{user.dni}}" required/>
+			</div>
+			<div class="col-md-9">
+				<span class="col-md-12">Nombre:</span>
+				<input name="name" class="col-md-12" value="{{user.name}}" required>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-3">
+				<span class="col-md-12">Correo El&eacute;ctronico:</span>
+				<input name="email" class="col-md-12" value="{{user.email}}" required>
+			</div>
+			<div class="col-md-9">
+				<span class="col-md-12">Tel&eacute;fono:</span>
+				<input name="phone" class="col-md-12" value="{{user.phone}}" required>
+			<input name="idCurso" value="{{curso.id}}" hidden/>
+			</div>
+		</div>
+		<div class="row">
+			<button class="btn btn-primary" type="submit">Aceptar</button>
+			<button class="btn btn-primary" type="submit">Cancelar</button>
+		</div>
+	</form>
+</div>
+
+{{>footer}}

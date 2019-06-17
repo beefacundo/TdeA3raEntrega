@@ -1,0 +1,36 @@
+.table td.text {
+    max-width: 177px;
+}
+.table td.text span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+    max-width: 100%;
+}
+
+nav {
+  float: none; /* Desplazamos el nav hacia la izquierda */
+}
+ 
+nav ol {
+  list-style: none;
+  overflow: hidden; /* Limpiamos errores de float */
+}
+ 
+nav ol li {
+  float: left;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+ 
+nav ol li a {
+  display: block; /* Convertimos los elementos a en elementos bloque para manipular el padding */
+  padding: 20px;
+  color: #000;
+  text-decoration: none;
+}
+ 
+nav ol li:hover {
+  background: #blue;
+}

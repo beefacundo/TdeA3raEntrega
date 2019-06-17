@@ -1,0 +1,74 @@
+{{>header}}
+{{#if error}}
+<div class="alert alert-danger" role="alert">
+ <h3>ERROR el id ingresado para el nuevo curso ya existe</h3>
+</div>
+{{/if}}
+{{#if created }}
+<div class="alert alert-success" role="alert">
+	<h3>Curso Creado con Exito</h3>
+</div>
+{{/if}}
+<div class="container">
+	<h2>Craer Curso:</h2>
+	<form action="/cc" method="POST">
+		<div class="row">
+			<div class="col-md-3">
+				<span class="col-md-12">Id:</span>
+				<input name="id" class="col-md-12" type="number" min="1000" max="9999" step="1" value="" size="6" required/>
+			</div>
+			<div class="col-md-9">
+				<span class="col-md-12">Nombre:</span>
+				<input name="name" class="col-md-12" required>
+			</div>
+		</div>
+		<div class="row">
+			<span class="col-md-12">Descripci&oacute;n:</span>
+			<textarea name="desc" class="col-md-12" required></textarea>
+		</div>
+		<div class="row">
+			<div class="col-md-9"> 
+				<span class="col-md-12">Profesor:</span>
+				<input name="teacher" class="col-md-12">
+			<!--<div class="dropdown">
+				<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				Dropdown button
+				</button>
+				<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+				<a class="dropdown-item" href="#">Action</a>
+				<a class="dropdown-item" href="#">Another action</a>
+				<a class="dropdown-item" href="#">Something else here</a>
+				</div>
+			<div> -->
+			</div>
+			<div class="col-md-3">
+				<span class="col-md-12">Modalidad:</span>
+				<div class="radio">
+				  <label><input type="radio" name="remote" checked value="1">Remoto</label>
+				</div>
+				<div class="radio">
+				  <label><input type="radio" name="remote" value="0">Presencial</label>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div>
+				<span class="col-md-12">Intensidad:</span>
+				<input name="hs" type="number" min="10" max="250" step="1" value="10" />
+			</div>
+			<div>
+				<span class="col-md-12">Valor:</span>
+				<input name="cost" type="number" min="0.00" max="100000.00" step="0.1" value="" required/>
+			</div>
+			<div>
+				<span class="col-md-12">Estado</span>
+				<td><input name="status" type="checkbox" checked data-toggle="toggle" /></td>
+			</div>
+		</div>
+		<div class="row">
+			<button class="btn btn-primary" type="submit">Aceptar</button>
+			<button class="btn btn-primary" type="submit">Cancelar</button>
+		</div>
+	</form>
+</div>
+{{>footer}}
