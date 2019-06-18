@@ -46,11 +46,16 @@
         {{else}}
             {{#each lista}}
                 {{#if this.status }}
-                    <tr class="clickable-row">
-                        <td class="col-md-2" scope="row">{{this.name}}</td>
-                        <td class="col-md-5 text"><span>{{this.description}}</span></td>
-                        <td class="col-md-1">${{this.cost}}</td>
+                    <tr class="clickable-row" name="{{this.id}}">
+                        <th class="col-md-2" scope="row">{{this.name}}</th>
+                        <td class="col-md-7 text"><span>{{this.description}}</span></td>
+                        <td class="col-md-2">${{this.cost}}</td>
                         <td class="col-md-1"><button class="insc btn btn-primary"type="button" data-href='/inscripcion/{{this.id}}'>Incribirse</button></td>
+                    </tr>
+                    <tr style="display:none;">
+                        <th colspan="4" >
+                            <p>Id: {{this.id}}</p><p>Modalidad: {{#if remote}}Remoto{{else}}Presencial{{/if}}</p><p>Intensidad: {{this.durationHs}}</p>
+                        </th>
                     </tr>
                 {{/if}}
             {{/each}}

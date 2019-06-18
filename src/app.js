@@ -39,7 +39,7 @@ let inscriptions = require('../dbJson/inscriptions.json');
 let roles = require('../dbJson/roles.json');
 */
 
-let currentUser = {id: 0, role: 0};//, name: "Facundo Bee", role: 0, dni:456677, phone:"+543493406960", email: "beefacundo@yahoo.com"};
+let currentUser = {id: 7, role: 0};//, name: "Facundo Bee", role: 0, dni:456677, phone:"+543493406960", email: "beefacundo@yahoo.com"};
 
 
 app.use(express.static(publicDir));
