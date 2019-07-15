@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Modulo 2 Curso de NodeJs TdeA",
   "main": "src/app.js",
+  "start": "src/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
