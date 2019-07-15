@@ -334,7 +334,7 @@ app.get('/registro', (req, res) => {
 	if (res.locals.sesion){
 		res.redirect('/');
 	} else {
-        res.render('../views/register');
+        res.render('../views/register', {error: req.body.error});
 	}
 });
 
