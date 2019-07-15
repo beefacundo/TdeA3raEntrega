@@ -330,6 +330,41 @@ app.get('/logout', (req, res) => {
 	res.redirect('/')	
 })
 
+app.get('/registro', (req, res) => {
+	if (res.locals.sesion){
+		res.redirect('/');
+	} else {
+        res.render('../views/register');
+	}
+});
+
+app.post('/registro', (req,res)=>{
+	let usr = new User({
+		'name': req.body.name,
+		'age': req.body.age,
+		'email': req.body.email,
+		'phone': req.body.phone,
+		'adress': req.body.adress,
+		'dni': req.body.dni,
+		'isActive': true,
+		'registered':Date(),
+		'role':'student',
+		'password':bcrypt.hashSync(req.body.password,10)
+	});
+
+	usr.save((err, resp)=>{
+		if (err){
+			console.log(err);
+			res.render('../views/register', {error: 1});
+		}
+		req.session.usuario = resp.id;	
+		req.session.nombre = resp.name;
+		res.redirect('/');	
+	});
+})
+
+
+
 
 mongoose.connect(process.env.URLDB, {useNewUrlParser: true}, (err, resultado) => {
 	if (err){

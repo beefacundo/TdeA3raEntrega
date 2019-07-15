@@ -30,8 +30,8 @@ const userSchema = new Schema({
 		match: /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/
 	},
 	phone: {
-		type: String,
-		match:/\+\d{2}\(\d{3}\)\d{3}-\d{3}/
+		type: String
+		//match:/\+\d{2}\(\d{3}\)\d{3}-\d{3}/
 
 	},
 	adress:{
@@ -42,7 +42,8 @@ const userSchema = new Schema({
 	},
 	role: {
 		type: String,
-		enum: {values:['admin','student','teacher']}
+		enum: {values:['admin','student','teacher']}, 
+		default: 'student'
 	},
 	dni: {
 		type: String,
