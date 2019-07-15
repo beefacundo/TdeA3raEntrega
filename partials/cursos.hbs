@@ -45,19 +45,26 @@
              {{/each}}
         {{else}}
             {{#each lista}}
-                {{#if this.status }}
                     <tr class="clickable-row" name="{{this.id}}">
                         <th class="col-md-2" scope="row">{{this.name}}</th>
                         <td class="col-md-7 text"><span>{{this.description}}</span></td>
                         <td class="col-md-2">${{this.cost}}</td>
-                        <td class="col-md-1"><button class="insc btn btn-primary"type="button" data-href='/inscripcion/{{this.id}}'>Incribirse</button></td>
+                        {{!-- <td class="col-md-1"><button class="btn btn-primary" type="button" href="/inscripcion/{{this.id}}">Incribirse</button></td> --}}
                     </tr>
-                    <tr style="display:none;">
-                        <th colspan="4" >
-                            <p>Id: {{this.id}}</p><p>Modalidad: {{#if remote}}Remoto{{else}}Presencial{{/if}}</p><p>Intensidad: {{this.durationHs}}</p>
+                    <tr style="display:none;" name="{{this.id}}">
+                        <th colspan="2" >
+                            <p>Id: {{this.id}}</p>
+                            <p>Modalidad: {{#if remote}}Remoto{{else}}Presencial{{/if}}</p>
+                            <p>Intensidad: {{this.durationHs}}</p>
                         </th>
+                        {{!-- <th class="col-md-1"><button class="btn btn-primary" type="button" data-href="/inscripcion/{{this.id}}">Incribirse</button></th> --}}
+                        
+                    <th><form class="form-inline my-2 my-lg-0" action="/inscripcion/{{this.id}}" method="get">
+                          <button class="col-md-1"><button class="btn btn-primary" type="submit">Incribirse</button>
+                        </form> 
+                    </th>
+
                     </tr>
-                {{/if}}
             {{/each}}
         {{/if}}
     </tbody>

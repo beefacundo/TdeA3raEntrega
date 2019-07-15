@@ -5,6 +5,10 @@
 			<li><a href="/crearCurso" rel="internal">Crear Curso</a></li>
 			<li><a href="/inscriptos" rel="internal">Admin Incripciones</a></li>
 		{{/if}}
-		<li><a href="/login" rel="internal">Login</a></li>
+		{{#if nombre }}
+			<li><a href="/logout" rel="internal">Logout</a></li>
+		{{else}}
+			<li><a href="/login" rel="internal">Login</a></li>
+		{{/if}}
 	</ol>
 </nav>

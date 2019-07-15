@@ -14,17 +14,4 @@ for (var i=0, max=listRows.length; i < max; i++) {
 		    el.style.display = "none";
 		  }
 	});
-}
-/*
-$(document).ready(function($) {
-    $(".clickable-row").click(function() {
-    	if ($(this).children(".text")){
-    		$(this).children(".text").addClass("textL").removeClass("text");
-    	} else{
-			 if ($(this).children(".textL")){
-				$(this).children(".textL").addClass("text").removeClass("textL");
-			}
-    	}
-    });
-    	$(this).next($(this).attr("id")).attr("hidden", "false");
-});*/
+};
