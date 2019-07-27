@@ -34,7 +34,7 @@ const userSchema = new Schema({
 		//match:/\+\d{2}\(\d{3}\)\d{3}-\d{3}/
 
 	},
-	adress:{
+	address:{
 		type: String
 	},
 	registered:{
@@ -58,6 +58,9 @@ const userSchema = new Schema({
 		//The string must contain at least 1 numeric character
 		//The string must contain at least one special character, but 
 		//The string must be eight characters or longer
+	}, 
+	img: {
+		type: Buffer
 	}
 });
 

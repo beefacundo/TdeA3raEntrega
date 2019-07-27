@@ -8,8 +8,11 @@
 	<!-- CSS -->
 	<link rel="stylesheet" href="/css/bootstrap.min.css"  type="text/css">
 	<link rel="stylesheet" href="./css/style.css">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 <body class="container">
+	<script src="socket.io/socket.io.js"></script>
+	<script src="js/sockets.js"></script>
 	<header class="col-12 col-md-12">
 		<div class="intro">
 			<h1>TdeA Curso Node</h1>
@@ -17,6 +20,7 @@
 			{{#if nombre}}
 			<h4>Bienvenido {{nombre}}</h4>
 			{{/if}}
+			<img src="./img/tdea.png">
 		</div>
 	</header>
 {{>menu}}

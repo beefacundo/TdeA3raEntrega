@@ -34,3 +34,43 @@ nav ol li a {
 nav ol li:hover {
   background: #blue;
 }
+
+header {
+     width:100%;
+     background-image:url("../img/images.jpeg");
+}
+header h1, h3, h4 {
+  color:#C0C0C0;
+}
+
+header img {
+  width: 79px;
+  float: right;
+  margin: auto;
+  position: relative;
+  top: -95px;
+}
+
+footer {
+  position: fixed;
+  left: 9%;
+  bottom: 0px;
+  height: 30px;
+  width: 82%;
+  text-align: center;
+}
+
+.avatar {
+  width: 35px;
+}
+
+
+.chatty1 {
+  border-right: 2px solid #C0C0C0;
+}
+.chatty2 {
+  float: right;
+  margin: auto;
+  position: relative;
+  top: -340px
+}

@@ -1,0 +1,40 @@
+{{>header}}
+<div class="container">
+    {{#if error }}
+		<div class="alert alert-danger" role="alert">
+			<h3>ERROR. Se produjo un error al reistrar</h3>
+		</div>
+	{{/if}}
+	<div class="col-md-6 login-form-1 align-self-center">
+	    <h3>Datos Personales</h3>
+	    	<form action="/editProfile" method="POST" enctype="multipart/form-data">
+		        
+		        <div class="form-group">
+		            <input name="name" type="text" class="form-control" placeholder="Nombre Completo" value="{{user.name}}" readonly/>
+		        </div>
+			        <div class="form-group">
+		            <input name="age" type="number" class="form-control" min="18" max="100" placeholder="Edad" value="{{user.age}}" required/>
+		        </div>
+		        <div class="form-group">
+		            <input name="email" type="email" class="form-control" placeholder="Your Email *" value="{{user.email}}" readonly/>
+		        </div>
+		        <div class="form-group">
+		            <input name="phone" type="text" class="form-control" placeholder="Telefono" value="{{user.phone}}" required/>
+		        </div>
+		        <div class="form-group">
+		            <input name="address" type="text" class="form-control" placeholder="Direccion" value="{{user.address}}" required/>
+		        </div>
+		        <div class="form-group">
+		            <input name="dni" type="text" class="form-control" placeholder="Numero de Identificacion" value="{{user.dni}}" readonly/>
+		        </div>
+		        <div class="form-group">
+		        	<span class="col-md-12">Imagen Perfil</span>
+		            <input name="file" type="file" class="form-control" accept="image/*" />
+		        </div>
+		        <div class="form-group">
+		            <button class="btn btn-primary"type="submit">Aceptar</button>
+		        </div>
+		    </form>
+	</div>
+</div>
+{{>footer}}

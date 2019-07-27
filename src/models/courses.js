@@ -51,6 +51,9 @@ const cursoSchema = new Schema({
 	remote: {
 		type: Boolean,
 		default: true
+	},
+	schedule: {
+		type: Buffer
 	}
 });
 

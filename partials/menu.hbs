@@ -1,12 +1,14 @@
 <nav class="row">
 	<ol>
 		<li><a href="/" rel="internal">Inicio</a></li>
-		{{#if admin }}
-			<li><a href="/crearCurso" rel="internal">Crear Curso</a></li>
-			<li><a href="/inscriptos" rel="internal">Admin Incripciones</a></li>
-		{{/if}}
 		{{#if nombre }}
+			{{#if admin }}
+				<li><a href="/crearCurso" rel="internal">Crear Curso</a></li>
+				<li><a href="/inscriptos" rel="internal">Admin Incripciones</a></li>
+			{{/if}}
+			<li><a href="/chat" rel="internal">Chat</a></li>
 			<li><a href="/logout" rel="internal">Logout</a></li>
+			<li><a href="/editProfile" rel="internal"><img class="avatar" src="data:img/png;base64, {{ avatar }}" ></a></li>
 		{{else}}
 			<li><a href="/login" rel="internal">Login</a></li>
 		{{/if}}

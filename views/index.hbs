@@ -1,7 +1,17 @@
 {{>header}}
 {{#if inscripted }}
 	<div class="alert alert-success" role="alert">
-		<h3>Se ha inscripto correctamente al curso</h3>
+		<h3>Se ha inscripto correctamente al curso.</h3>
+	</div>
+{{/if}}
+{{#if errorUpdate }}
+	<div class="alert alert-danger" role="alert">
+		<h3>Hubo un error al actualizr sus datos.</h3>
+	</div>
+{{/if}}
+{{#if succesUpdate }}
+	<div class="alert alert-success" role="alert">
+		<h3>Se han actualizado correctamente sus datos.</h3>
 	</div>
 {{/if}}
 {{>cursos}}

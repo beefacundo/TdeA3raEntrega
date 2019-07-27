@@ -1,0 +1,32 @@
+{{>header}}
+<div class="container">
+	<div clas="row">
+		<div class="chatty1 col-md-8 login-form-1 align-self-center">
+			<h3>Sala General:</h3>
+			<form id="publicForm">
+				<span class="col-md-12">Mensaje:</span>
+				<input type="text" class="col-md-12" id="publicMsg"/>
+				<button class="btn btn-primary">Send</button>
+			</form>
+			<div class="col-md-8" id="pubChat">
+			</div>
+			<h3>Sala Privada:</h3>
+			<input id="pubUsr" class="col-md-12" value="{{usr}}" hidden/>
+			<form id="privateForm">
+				<span class="col-md-12">Destinatario:</span>
+				<input type="text" class="col-md-12"id="privDest"/>
+				<span class="col-md-12">Mensaje:</span>
+				<input type="text" class="col-md-12"id="privateMsg"/>
+				<button class="btn btn-primary">Send Private</button>
+			</form>			
+			<div class="col-md-8" id="privChat">
+			</div>
+		</div>
+		<div class="chatty2 col-md-4 login-form-1 align-self-center">
+			<h4>Usuarios Conectados:</h4>
+			<div class="col-md-4" id="usrOnline">
+			</div>
+		</div>
+	</div>
+</div>
+{{>footer}}
